@@ -1,0 +1,42 @@
+SOURCES_aout_directx = directx.c windows_audio_common.h
+SOURCES_aout_file = file.c
+SOURCES_aout_sdl = sdl.c
+SOURCES_waveout = waveout.c windows_audio_common.h
+SOURCES_portaudio = portaudio.c
+SOURCES_auhal = auhal.c
+SOURCES_jack = jack.c
+SOURCES_audioqueue = audioqueue.c
+SOURCES_opensles_android = opensles_android.c
+
+libamem_plugin_la_SOURCES = amem.c
+libamem_plugin_la_CFLAGS = $(AM_CFLAGS)
+libamem_plugin_la_LIBADD = $(AM_LIBADD)
+libamem_plugin_la_DEPENDENCIES =
+
+libvlc_LTLIBRARIES += \
+	libamem_plugin.la \
+	libaout_file_plugin.la
+
+liboss_plugin_la_SOURCES = oss.c
+liboss_plugin_la_LIBADD = $(AM_LIBADD) $(OSS_LIBS)
+liboss_plugin_la_DEPENDENCIES =
+if HAVE_OSS
+libvlc_LTLIBRARIES += liboss_plugin.la
+endif
+
+libalsa_plugin_la_SOURCES = alsa.c
+libalsa_plugin_la_CFLAGS = $(AM_CFLAGS) $(ALSA_CFLAGS)
+libalsa_plugin_la_LIBADD = $(AM_LIBADD) $(ALSA_LIBS)
+libalsa_plugin_la_DEPENDENCIES =
+if HAVE_ALSA
+libvlc_LTLIBRARIES += libalsa_plugin.la
+endif
+
+libpulse_plugin_la_SOURCES = pulse.c
+libpulse_plugin_la_CFLAGS = $(AM_CFLAGS) $(PULSE_CFLAGS)
+libpulse_plugin_la_LIBADD = $(AM_LIBADD) $(PULSE_LIBS) \
+	../../src/libvlcpulse.la
+libpulse_plugin_la_DEPENDENCIES =
+if HAVE_PULSE
+libvlc_LTLIBRARIES += libpulse_plugin.la
+endif

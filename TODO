@@ -1,0 +1,11 @@
+TODO
+( ) fix UI bugs and improve UI
+( ) improve AOUT
+(X) rework control flow
+(X) fix armeabi build
+(X) fix SMP build, test it on Xoom or something else please
+( ) fix danmaku
+( ) viewer for acfun/bilibili and so on(nicovideo needs login so do it later)
+( ) download video & danmaku from acfun/bilibili(nicovideo needs login so do it later)
+( ) merge multiple flv files into one for sina/qq/? source
+(?) implement fullscreen/aspect ration control in both MediaPlayer and VLC

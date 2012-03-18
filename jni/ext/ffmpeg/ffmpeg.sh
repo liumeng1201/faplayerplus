@@ -1,0 +1,12 @@
+./configure \
+--enable-static \
+--enable-bsfs \
+--disable-devices \
+--enable-encoders \
+--enable-filters \
+--enable-muxers \
+--enable-cross-compile \
+--cross-prefix=arm-linux-androideabi- \
+--arch=armv6j \
+--cpu=arm1136j-s \
+--target-os=linux

@@ -1,0 +1,29 @@
+This project is based on the faplayer of tewilove.
+
+VLC-1.2.0-git is on the road!
+
+Any questions please contact tewilove@gmail.com, or leave a message to http://myloli.cc.
+
+Requirements:
+1. NDK-r5c
+2. ruby-1.9.2
+
+Notice for Cygwin users:
+If you git clone the source in a Cygwin shell, build process should be fine.
+If you download the archive, you have to overwrite the same named files from jni/ext/libass/libass to jni/ext/libass/include since they are symbol links.
+
+Build steps:
+1. Edit local.properties to fit your environment.
+2. Run build.sh.
+Build examples:
+./build.sh # <-- this will build for cortex-a8 with neon by default.
+./build.sh ABI=armeabi # <-- this will build for arm1136j-s with softfp.
+./build.sh ABI=armeabi-v7a FPU=vfpv3-d16 TUNE=cortex-a9 # <-- Xoom
+
+NDK issues:
+Known not building on NDK-r5b and before unless LOCAL_WHOLE_STATIC_LIBRARIES bug is fixed.
+
+Branches:
+master contains the minium player source.
+message-player is built on top of master with acfun/bilibili/* support.
+

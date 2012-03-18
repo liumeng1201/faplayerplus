@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical" >
+
+	<EditText android:id="@+id/test_uri"
+	    android:text="http://devimages.apple.com/iphone/samples/bipbop/gear1/prog_index.m3u8"
+        android:layout_width="fill_parent"
+		android:layout_height="wrap_content" />
+
+	<Button android:id="@+id/test_play"
+        android:text="Play"
+        android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
+
+</LinearLayout>
+

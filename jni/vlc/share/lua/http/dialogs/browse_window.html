@@ -1,0 +1,41 @@
+<script language="javascript" type="text/javascript">
+	var browse_target		=	'default';
+	$(function(){
+		$('#window_browse').dialog({
+			autoOpen: false,
+			width: 600,
+			height: 650,
+			modal: true,
+			resizable: false,
+			buttons: {
+				"Open":function(){
+					$('li.ui-selected','#browse_elements').each(function(){
+						$(this).dblclick();
+					});
+				},
+				"Enqueue": function() {
+					$('li.ui-selected','#browse_elements').each(function(){
+						var path	=	this.getAttribute('opendir') ? this.getAttribute('opendir') : this.getAttribute('openfile');
+						switch(browse_target){
+							default:
+								sendCommand('command=in_enqueue&input='+encodeURI(path));
+								break;
+						}
+					});
+					$(this).dialog("close");
+				},
+				"Cancel" : function(){
+					$(this).dialog("close")
+				}
+			}
+		});
+	});
+</script>
+
+<div id="window_browse" title="Media Browser">
+	<div style="height:500px;overflow: scroll;">
+		<ol id='browse_elements' selectable="selectable">
+			<li>Play List</li>
+		</ol>
+	</div>
+</div>

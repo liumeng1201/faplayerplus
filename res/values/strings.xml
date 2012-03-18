@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">faplayer</string>
+    <string name="go">go</string>
+    <string name="nulltime">--:--:--</string>
+    <string name="input_file">Input_file</string>
+</resources>
