@@ -38,12 +38,12 @@ public class DefMediaPlayer extends AbsMediaPlayer implements
 	Runnable r = new Runnable(){ 
 	     public void run(){ 
 	         //do something 
-            if (mMediaPlayer == null || mOnProgressUpdateListener == null) {
+            if (sInstance == null || mOnProgressUpdateListener == null) {
                 return;
             }
-            else if (mMediaPlayer.isPlaying()) {
-                int time = mMediaPlayer.getCurrentPosition();
-                int length = mMediaPlayer.getDuration();
+            else if (sInstance.isPlaying()) {
+                int time = sInstance.getCurrentPosition();
+                int length = sInstance.getDuration();
                 mOnProgressUpdateListener.onProgressUpdate((AbsMediaPlayer) DefMediaPlayer.this,
                         time, length);
                 mHandler.post(r);

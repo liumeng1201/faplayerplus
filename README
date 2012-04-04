@@ -1,12 +1,11 @@
 This project is based on the faplayer of tewilove.
 
-VLC-1.2.0-git is on the road!
-
-Any questions please contact tewilove@gmail.com, or leave a message to http://myloli.cc.
+If you have questions you contact tewilove@gmail.com, or leave a message to http://myloli.cc.
 
 Requirements:
 1. NDK-r5c
 2. ruby-1.9.2
+3. ant-1.8
 
 Notice for Cygwin users:
 If you git clone the source in a Cygwin shell, build process should be fine.
